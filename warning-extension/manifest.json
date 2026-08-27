@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "网站风险警告拦截器",
+  "version": "1.0",
+  "description": "将所有网页替换为警告页面，仅通过高级选项按钮访问指定视频",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["898.ico"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
